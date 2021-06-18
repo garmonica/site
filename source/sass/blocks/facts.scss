@@ -46,6 +46,7 @@
   letter-spacing: -0.5px;
 
   @media (max-width: $tablet-width) {
+    min-width: 290px;
     margin-left: 48px;
   }
 
