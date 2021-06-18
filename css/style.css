@@ -638,7 +638,9 @@ a {
   .main-nav a:hover,
   .main-nav a:focus {
     opacity: 1;
-    outline: none; } }
+    outline: none;
+    border-bottom: 1px solid #ffffff;
+    margin-bottom: -1px; } }
 
 @media (min-width: 1024px) {
   .main-nav a:active {
