@@ -1,0 +1,26 @@
+.page-header {
+  background: $dark-bg url("../img/bg-bike.jpg") no-repeat center / cover;
+  position: relative;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/bg-bike@2x.jpg");
+  }
+
+  @media (max-width: $tablet-width) {
+    background: $basic-white;
+  }
+}
+
+.page-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 115px 20px;
+
+  @media (max-width: $tablet-width) {
+    display: block;
+    max-width: 100%;
+    padding: 0;
+  }
+}

@@ -1,0 +1,60 @@
+.intro {
+  width: 45%;
+  min-width: 320px;
+  margin-right: 40px;
+
+  @media (max-width: $tablet-width) {
+    width: auto;
+    margin: 0;
+    padding: 25px 22px;
+    background: $dark-bg url("../img/bg-bike.jpg") no-repeat center / cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-bike@2x.jpg");
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 25px 17px;
+  }
+}
+
+.intro h2 {
+  margin: 23px 0;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 1.39em;
+  color: $basic-white;
+
+  @media (max-width: $tablet-width) {
+    margin: 82px 0 18px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin: 67px 20px 20px;
+  }
+}
+
+.intro p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.6em;
+  color: $basic-white;
+  opacity: 0.8;
+
+  @media (max-width: $tablet-width) {
+    width: 65%;
+    margin: 0 auto 55px;
+    font-size: 18px;
+    line-height: 1.78em;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: auto;
+    margin-bottom: 45px;
+  }
+}

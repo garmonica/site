@@ -1,0 +1,102 @@
+.order {
+  display: flex;
+  flex-direction: column;
+  max-width: 327px;
+
+  @media (max-width: $tablet-width) {
+    margin: 0 auto;
+    padding: 67px 0 27px;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 67px 15px 27px;
+  }
+}
+
+.order p {
+  margin: 3px 0 20px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.65em;
+  text-align: center;
+  color: $basic-white;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 1.56em;
+    color: $basic-black;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.order input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 11px 28px;
+  background: $basic-white;
+  border: 1px solid $border-light;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.6em;
+  color: $basic-dark;
+
+  @media (max-width: $tablet-width) {
+    max-width: 321px;
+    padding: 11px 20px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 11px 26px;
+  }
+}
+
+.order input::placeholder {
+  color: $basic-dark;
+  opacity: 0.5;
+}
+
+.order input:hover,
+.order input:focus {
+  border-color: $accent-hover;
+  outline: none;
+}
+
+.order input:hover::placeholder,
+.order input:focus::placeholder {
+  color: $accent-hover;
+}
+
+.order button {
+  width: 100%;
+  padding: 15px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.4em;
+  background: $accent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: $basic-black;
+
+  @media (max-width: $tablet-width) {
+    max-width: 321px;
+  }
+}
+
+.order button:hover,
+.order button:focus {
+  background: $accent-hover;
+  outline: none;
+}
+
+.order button:active {
+  color: rgba($basic-black, 0.5);
+}
