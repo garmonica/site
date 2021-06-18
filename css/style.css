@@ -592,7 +592,8 @@ a {
   margin: 0; }
   @media (max-width: 1023px) {
     .main-nav li {
-      position: relative; } }
+      position: relative;
+      width: 100%; } }
 
 .main-nav__list svg {
   display: none; }
