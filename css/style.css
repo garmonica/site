@@ -538,7 +538,7 @@ a {
       top: 0;
       right: 0;
       border: none;
-      background-color: lightblue;
+      background-color: #e74b54;
       z-index: 110; }
       .main-nav button::before, .main-nav button::after {
         content: "";
@@ -815,28 +815,28 @@ a {
 
 .order input:hover,
 .order input:focus {
-  border-color: plum;
+  border-color: #ca373f;
   outline: none; }
 
 .order input:hover::-webkit-input-placeholder,
 .order input:focus::-webkit-input-placeholder {
-  color: plum; }
+  color: #ca373f; }
 
 .order input:hover::-moz-placeholder,
 .order input:focus::-moz-placeholder {
-  color: plum; }
+  color: #ca373f; }
 
 .order input:hover:-ms-input-placeholder,
 .order input:focus:-ms-input-placeholder {
-  color: plum; }
+  color: #ca373f; }
 
 .order input:hover::-ms-input-placeholder,
 .order input:focus::-ms-input-placeholder {
-  color: plum; }
+  color: #ca373f; }
 
 .order input:hover::placeholder,
 .order input:focus::placeholder {
-  color: plum; }
+  color: #ca373f; }
 
 .order button {
   width: 100%;
@@ -845,7 +845,7 @@ a {
   font-weight: 600;
   font-size: 15px;
   line-height: 1.4em;
-  background: lightblue;
+  background: #e74b54;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -856,7 +856,7 @@ a {
 
 .order button:hover,
 .order button:focus {
-  background: plum;
+  background: #ca373f;
   outline: none; }
 
 .order button:active {
@@ -937,7 +937,7 @@ a {
     line-height: 38px;
     font-weight: 700;
     letter-spacing: -1.27px;
-    color: lightblue; }
+    color: #e74b54; }
 
 .page-footer {
   padding: 62px 35px 25px;
@@ -1061,7 +1061,7 @@ a {
 
 .contacts__link:hover,
 .contacts__link:focus {
-  color: lightblue; }
+  color: #e74b54; }
 
 .contacts__link:active {
   opacity: 0.4; }
