@@ -117,6 +117,8 @@
   @media (min-width: $desktop-width-only) {
     opacity: 1;
     outline: none;
+    border-bottom: 1px solid $basic-white;
+    margin-bottom: -1px;
   }
 }
 
