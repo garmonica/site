@@ -702,10 +702,10 @@ a {
       background-image: url("../img/bg-bike@2x.jpg"); } }
   @media (max-width: 767px) {
     .intro {
-      padding: 25px 17px; } }
+      padding: 20px 17px 25px; } }
 
 .intro__logo-link img {
-  width: 50px; }
+  width: 65px; }
 
 .intro h2 {
   margin: 23px 0;
@@ -943,6 +943,71 @@ a {
     font-weight: 700;
     letter-spacing: -1.27px;
     color: #e74b54; }
+
+.clock {
+  padding: 40px 0;
+  font-family: 'Consolas', monospace;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #2c2f3b; }
+
+.clock__face {
+  border: 10px solid #e74b54;
+  width: 300px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  border-radius: 50%;
+  background: #242533;
+  -webkit-box-shadow: 0 0 12px rgba(240, 128, 128, 0.3), 0 0 12px rgba(0, 0, 0, 0.4) inset;
+          box-shadow: 0 0 12px rgba(240, 128, 128, 0.3), 0 0 12px rgba(0, 0, 0, 0.4) inset; }
+
+.clock__time {
+  font-size: 0;
+  margin-bottom: 10px; }
+
+.clock__time span {
+  font-size: 46px; }
+
+.clock__blink-colon {
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite; }
+
+@-webkit-keyframes blink {
+  0%, 100% {
+    opacity: 1; }
+  30% {
+    opacity: 0.4; } }
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1; }
+  30% {
+    opacity: 0.4; } }
+
+.clock__date-container {
+  margin-top: 6px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8); }
 
 .page-footer {
   padding: 62px 35px 25px;
