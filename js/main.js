@@ -3,28 +3,33 @@ const mainNav = document.querySelector('.main-nav');
 if (mainNav) {
   const menuToggle = mainNav.querySelector('button');
   const menuLinks = mainNav.querySelectorAll('a');
+  const body = document.querySelector('body');
 
   mainNav.classList.remove('main-nav--nojs');
 
+  const openMenu = () => {
+    mainNav.classList.remove('main-nav--closed');
+    mainNav.classList.add('main-nav--opened');
+    body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    mainNav.classList.add('main-nav--closed');
+    mainNav.classList.remove('main-nav--opened');
+    body.style.overflow = 'auto';
+  };
+
   menuToggle.addEventListener('click', () => {
     if (mainNav.classList.contains('main-nav--closed')) {
-      mainNav.classList.remove('main-nav--closed');
-      mainNav.classList.add('main-nav--opened');
+      openMenu();
     } else {
-      mainNav.classList.add('main-nav--closed');
-      mainNav.classList.remove('main-nav--opened');
+      closeMenu();
     }
   });
 
   menuLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      mainNav.classList.add('main-nav--closed');
-      mainNav.classList.remove('main-nav--opened');
-    });
-  });
-
-  menuLinks.forEach((link) => {
     link.addEventListener('click', (evt) => {
+      closeMenu();
       evt.preventDefault();
       const id = link.getAttribute('href');
       document.querySelector(id).scrollIntoView({
