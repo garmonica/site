@@ -1,5 +1,3 @@
-
-
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const sourcemap = require('gulp-sourcemaps');
@@ -40,6 +38,7 @@ gulp.task('server', () => {
   gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('css'));
   gulp.watch('source/img/icon-*.svg', gulp.series('sprite', 'html', 'refresh'));
   gulp.watch('source/*.html', gulp.series('html', 'refresh'));
+  gulp.watch('source/js/*.js', gulp.series('scripts', 'refresh'));
 });
 
 gulp.task('refresh', (done) => {
@@ -74,8 +73,14 @@ gulp.task('html', () => gulp.src('source/*.html')
 gulp.task('copy', () => gulp.src([
   'source/fonts/**/*.{woff,woff2}',
   'source/img/**',
-  'source/js/**',
   'source//*.ico',
+], {
+  base: 'source',
+})
+  .pipe(gulp.dest('build')));
+
+gulp.task('scripts', () => gulp.src([
+  'source/js/**',
 ], {
   base: 'source',
 })
@@ -83,5 +88,5 @@ gulp.task('copy', () => gulp.src([
 
 gulp.task('clean', () => del('build'));
 
-gulp.task('build', gulp.series('clean', 'copy', 'css', 'sprite', 'images', 'webp', 'html'));
+gulp.task('build', gulp.series('clean', 'copy', 'css', 'sprite', 'images', 'webp', 'html', 'scripts'));
 gulp.task('start', gulp.series('build', 'server'));
