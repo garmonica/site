@@ -6,8 +6,9 @@
   @media (max-width: $tablet-width) {
     width: auto;
     margin: 0;
-    padding: 25px 22px;
+    padding: 70px 22px 25px;
     background: $dark-bg url("../img/bg-bike.jpg") no-repeat center / cover;
+    text-align: center;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/bg-bike@2x.jpg");
@@ -15,12 +16,21 @@
   }
 
   @media (max-width: $mobile-width) {
-    padding: 20px 17px 25px;
+    padding: 70px 17px 25px;
   }
 }
 
 .intro__logo-link img {
   width: 65px;
+  height: auto;
+
+  @media (max-width: $tablet-width) {
+    width: 55px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 45px;
+  }
 }
 
 .intro h2 {
@@ -31,13 +41,13 @@
   color: $basic-white;
 
   @media (max-width: $tablet-width) {
-    margin: 82px 0 18px;
+    margin: 15px 0 18px;
     font-size: 30px;
     text-align: center;
   }
 
   @media (max-width: $mobile-width) {
-    margin: 67px 20px 20px;
+    margin: 15px 20px 20px;
   }
 }
 
