@@ -17,17 +17,22 @@
   }
 }
 
-.map img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+// .map img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
 
-.map iframe {
-  position: absolute;
-  left: 0;
-  top: 0;
-  border: none;
+// .map iframe {
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   border: none;
+//   width: 100%;
+//   height: 100%;
+// }
+
+.map__block {
   width: 100%;
   height: 100%;
 }
