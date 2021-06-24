@@ -11,6 +11,7 @@
   <link rel="preload" href="fonts/opensans-regular.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/opensans-semibold.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/opensans-bold.woff2" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
 </head>
 
 <body>
@@ -79,7 +80,7 @@
           <a class="intro__logo-link">
             <img src="img/logo-olia.svg" width="68" height="20" alt="Логотип магазина «Moon»">
           </a>
-          <h2>Обо мне</h2>
+          <h2>Добро пожаловать!</h2>
           <p>Привет, меня зовут Оля! Я из Санкт-Петербурга</p>
         </section>
         <div class="order">
@@ -130,6 +131,19 @@
       <h2>Как нас найти?</h2>
       <p>Мы находимся по адресу: где-то в Питере. Только не заблудитесь!</p>
       <div class="map">
+
+        <!-- yandex -->
+        <!-- <iframe src="https://yandex.ru/map-widget/v1/-/CCUeeQqkxC" width="560" height="400" frameborder="1"
+          allowfullscreen="true" style="position:relative;"></iframe> -->
+
+        <!-- google -->
+        <!-- <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651586!2d30.320894616097!3d59.938794181876254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1624548137769!5m2!1sru!2sru"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+
+        <!-- LEAFLET -->
+        <div class="map__block" id="map"></div>
+
         <picture>
           <source type="image/webp" media="(max-width: 767px)" srcset="img/map-mobile.webp 1x, img/map-mobile@2x.webp 2x">
           <source type="image/webp" media="(min-width: 768px)" srcset="img/map.webp 1x, img/map@2x.webp 2x">
@@ -152,7 +166,9 @@
       </div>
     </div>
   </footer>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/vendor.js"></script>
 </body>
 
 </html>
