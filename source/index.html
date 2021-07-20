@@ -31,37 +31,7 @@
             </svg>
           </li>
           <li>
-            <a href="#types">Портфолио</a>
-            <svg width="7" height="12">
-              <use xlink:href="img/sprite.svg#icon-arrow"></use>
-            </svg>
-          </li>
-          <li>
-            <a href="#video">Услуги</a>
-            <svg width="7" height="12">
-              <use xlink:href="img/sprite.svg#icon-arrow"></use>
-            </svg>
-          </li>
-          <li>
-            <a href="#contacts">Контакты</a>
-            <svg width="7" height="12">
-              <use xlink:href="img/sprite.svg#icon-arrow"></use>
-            </svg>
-          </li>
-          <li>
-            <a href="#contacts">Информация</a>
-            <svg width="7" height="12">
-              <use xlink:href="img/sprite.svg#icon-arrow"></use>
-            </svg>
-          </li>
-          <li>
-            <a href="#contacts">Товары</a>
-            <svg width="7" height="12">
-              <use xlink:href="img/sprite.svg#icon-arrow"></use>
-            </svg>
-          </li>
-          <li>
-            <a href="#contacts">Разное</a>
+            <a href="#contacts">Фотогалерея</a>
             <svg width="7" height="12">
               <use xlink:href="img/sprite.svg#icon-arrow"></use>
             </svg>
@@ -72,34 +42,87 @@
               <use xlink:href="img/sprite.svg#icon-arrow"></use>
             </svg>
           </li>
+          <li>
+            <a href="#contacts">Контакты</a>
+            <svg width="7" height="12">
+              <use xlink:href="img/sprite.svg#icon-arrow"></use>
+            </svg>
+          </li>
         </ul>
       </nav>
-      <h1 class="visually-hidden">Портфолио</h1>
+      <h1 class="visually-hidden">Мой сайт</h1>
       <div class="page-header__wrapper">
-        <section class="intro">
-          <a class="intro__logo-link">
-            <img src="img/logo-star.svg" width="68" height="20" alt="Логотип магазина «Moon»">
-          </a>
+        <section class="intro container">
+          <div class="intro__wrapper">
+            <a class="intro__logo-link">
+              <img src="img/logo-star.svg" width="68" height="20" alt="Логотип звёздочка">
+            </a>
+            <section class="clock">
+              <div class="clock__face">
+                <div class="clock__time">
+                  <span id="hour">--</span>
+                  <span class="clock__blink-colon">:</span>
+                  <span id="minute">--</span>
+                  <span class="clock__blink-colon">:</span>
+                  <span id="second">--</span>
+                </div>
+                <div class="clock__date-container">
+                  <span id="date">__.__.20__</span>,
+                  <span id="day">___________</span>
+                </div>
+              </div>
+            </section>
+          </div>
           <h2>Добро пожаловать!</h2>
-          <p>Привет, меня зовут Оля! Я из Санкт-Петербурга</p>
+          <p>Привет, меня зовут Оля! Я из Санкт-Петербурга и&nbsp;всякое такое. Это просто для тестирования.</p>
         </section>
-        <div class="order">
-          <p>Заполните поля ниже</p>
-          <form action="" method="POST">
-            <label class="visually-hidden" for="user-name">Ваше имя:</label>
-            <input id="user-name" type="text" name="user-name" minlength="1" maxlength="50"
-              placeholder="Введите Ваше Имя" pattern="[A-Za-zА-Яа-яЁё]{1,50}" required>
-            <label class="visually-hidden" for="user-phone">Ваш телефон:</label>
-            <input id="user-phone" type="tel" name="user-phone" minlength="12" maxlength="12"
-              placeholder="Введите Ваш номер телефона" required>
-            <button class="order__submit" type="submit">Нажать на кнопочку</button>
-          </form>
-        </div>
       </div>
+      <section class="slider">
+        <div id="gallery" class="slider__gallery">
+          <div class="slider__photos">
+            <img class="slider__photo" src="img/slider/slide1.jpg">
+            <img class="slider__photo" src="img/slider/slide2.jpg">
+            <img class="slider__photo" src="img/slider/slide3.jpg">
+            <img class="slider__photo" src="img/slider/slide4.jpg">
+            <img class="slider__photo" src="img/slider/slide5.jpg">
+          </div>
+          <div class="slider__buttons">
+            <button class="slider__prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="53" viewBox="0 0 7 12" fill="none">
+                <path d="M6 1.85156L1.87368 5.97789L6 10.1042" stroke="#e74b54" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="slider__next">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="53" viewBox="0 0 7 12" fill="none">
+                <path d="M6 1.85156L1.87368 5.97789L6 10.1042" stroke="#e74b54" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="slider__circle-buttons"></div>
+        </div>
+
+        <div class="slider__auto-wrapper">
+          <button class="slider__auto-button slider__auto-button--pause" type="button">❚❚</button>
+          <button class="slider__auto-button slider__auto-button--play" type="button">►</button>
+        </div>
+      </section>
+
     </div>
   </header>
 
   <main>
+    <section class="image-hover">
+      <div class="image-hover__container">
+        <div class="image-hover__text">
+          <h4>City Life</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam cumque omnis corrupti</p>
+        </div>
+        <img class="image-hover__img image-hover__img--one" src="img/nyc.jpg">
+        <img class="image-hover__img image-hover__img--two" src="img/nyc.jpg">
+      </div>
+    </section>
     <section class="facts" id="facts">
       <div class="container">
         <h2>Несколько фактов обо мне:</h2>
@@ -111,19 +134,18 @@
         </ul>
       </div>
     </section>
-    <section class="clock">
-      <div class="clock__face">
-        <div class="clock__time">
-          <span id="hour">--</span>
-          <span class="clock__blink-colon">:</span>
-          <span id="minute">--</span>
-          <span class="clock__blink-colon">:</span>
-          <span id="second">--</span>
-        </div>
-        <div class="clock__date-container">
-          <span id="date">__.__.20__</span>,
-          <span id="day">___________</span>
-        </div>
+    <section class="order">
+      <div class="container">
+        <p>Заполните поля ниже</p>
+        <form class="order__form" action="php/sendmail.php" method="POST">
+          <label class="visually-hidden" for="name">Ваше имя:</label>
+          <input id="name" type="text" name="name" minlength="1" maxlength="50" placeholder="Введите Ваше Имя"
+            pattern="[A-Za-zА-Яа-яЁё]{1,50}" required>
+          <label class="visually-hidden" for="tel">Ваш телефон:</label>
+          <input id="tel" type="tel" name="tel" minlength="12" maxlength="12" placeholder="Введите Ваш номер телефона"
+            required>
+          <button class="order__submit" type="submit">Нажать на кнопочку</button>
+        </form>
       </div>
     </section>
   </main>
@@ -171,6 +193,7 @@
       </div>
     </div>
   </footer>
+
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script type="module" src="js/main.js"></script>
   <script type="module" src="js/vendor.js"></script>

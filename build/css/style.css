@@ -512,15 +512,10 @@ a {
       background: #ffffff; } }
 
 .page-header__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  text-align: center;
   max-width: 920px;
   margin: 0 auto;
-  padding: 115px 20px; }
+  padding: 20px 20px 0; }
   @media (max-width: 1023px) {
     .page-header__wrapper {
       display: block;
@@ -694,12 +689,9 @@ a {
   display: none; }
 
 .intro {
-  width: 45%;
-  min-width: 320px;
-  margin-right: 40px; }
+  min-width: 320px; }
   @media (max-width: 1023px) {
     .intro {
-      width: auto;
       margin: 0;
       padding: 70px 22px 25px;
       background: #131314 url("../img/bg-bike.jpg") no-repeat center/cover;
@@ -711,6 +703,14 @@ a {
     .intro {
       padding: 70px 17px 25px; } }
 
+.intro__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 .intro__logo-link img {
   width: 65px;
   height: auto; }
@@ -719,9 +719,9 @@ a {
       width: 55px; } }
 
 .intro h2 {
-  margin: 23px 0;
+  margin: 12px 0;
   font-weight: 700;
-  font-size: 46px;
+  font-size: 32px;
   line-height: 1.39em;
   color: #ffffff; }
   @media (max-width: 1023px) {
@@ -734,12 +734,13 @@ a {
       margin: 15px 20px 20px; } }
 
 .intro p {
-  margin: 0;
+  margin: 0 auto;
   font-weight: 300;
   font-size: 20px;
   line-height: 1.6em;
   color: #ffffff;
-  opacity: 0.8; }
+  opacity: 0.8;
+  max-width: 500px; }
   @media (max-width: 1023px) {
     .intro p {
       width: 65%;
@@ -753,6 +754,7 @@ a {
       margin-bottom: 45px; } }
 
 .order {
+  padding: 40px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -760,7 +762,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 327px; }
+  background-color: #131314; }
   @media (max-width: 1023px) {
     .order {
       margin: 0 auto;
@@ -769,6 +771,9 @@ a {
   @media (max-width: 767px) {
     .order {
       padding: 67px 15px 27px; } }
+
+.order form {
+  max-width: 350px; }
 
 .order p {
   margin: 3px 0 20px;
@@ -955,49 +960,146 @@ a {
     letter-spacing: -1.27px;
     color: #e74b54; }
 
-.clock {
-  padding: 40px 0;
-  font-family: "Consolas", monospace;
+.slider {
+  margin-bottom: 20px; }
+
+.slider__gallery {
+  width: 900px;
+  margin: 20px auto 10px;
+  text-align: center;
+  position: relative; }
+
+.slider__photos {
+  margin: 0 auto;
+  border: 8px solid #e74b54;
+  border-radius: 4px;
+  overflow: hidden;
+  width: calc(100% - 100px);
+  height: 400px;
+  position: relative; }
+
+.slider__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  -webkit-transition: 0.8s;
+  transition: 0.8s; }
+
+.slider__photo-active {
+  opacity: 1; }
+
+.slider__buttons {
+  margin-top: 10px; }
+
+.slider__buttons button {
+  height: 100%;
+  width: 50%;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: left;
+  position: absolute;
+  background: transparent;
+  top: 0;
+  outline: none; }
+
+.slider__prev {
+  left: 0; }
+
+.slider__next {
+  right: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg); }
+
+.slider__buttons button:hover,
+.slider__buttons button:focus {
+  opacity: 0.5;
+  color: #ffffff; }
+
+.slider__buttons button:active {
+  opacity: 0.3; }
+
+.slider__circle-buttons {
+  margin-top: 10px;
+  margin-left: -5px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 100; }
+
+.slider__circle-buttons button {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  cursor: pointer; }
+
+.slider__circle-buttons button:hover {
+  background: #e74b54; }
+
+.slider__circle-buttons .active,
+.slider__circle-buttons .active:hover {
+  background: #e74b54;
+  color: #ffffff;
+  cursor: default;
+  -webkit-transition: 0.8s;
+  transition: 0.8s; }
+
+.slider__auto-wrapper {
+  width: 740px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #2c2f3b; }
+          justify-content: center; }
+
+.slider__auto-button {
+  margin: 0 2px;
+  width: 45px;
+  height: 30px;
+  font-size: 15px;
+  display: block;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  background: #e74b54; }
+
+.slider__auto-button:hover {
+  opacity: 0.5; }
+
+.slider__auto-button:active {
+  opacity: 0.4; }
+
+.slider__auto-button--active {
+  opacity: 0.5;
+  cursor: default; }
+
+.clock {
+  max-width: 870px; }
 
 .clock__face {
-  border: 10px solid #e74b54;
-  width: 300px;
-  height: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  color: #ffffff;
-  border-radius: 50%;
-  background: #242533;
-  -webkit-box-shadow: 0 0 12px rgba(240, 128, 128, 0.3), 0 0 12px rgba(0, 0, 0, 0.4) inset;
-          box-shadow: 0 0 12px rgba(240, 128, 128, 0.3), 0 0 12px rgba(0, 0, 0, 0.4) inset; }
+  padding: 5px;
+  text-align: center;
+  color: #ffffff; }
 
 .clock__time {
-  font-size: 0;
-  margin-bottom: 10px; }
+  font-size: 0; }
 
 .clock__time span {
-  font-size: 46px; }
+  font-family: "Consolas", monospace;
+  font-size: 22px;
+  line-height: 1em; }
 
 .clock__blink-colon {
   -webkit-animation: blink 1s infinite;
@@ -1018,8 +1120,10 @@ a {
     opacity: 0.4; } }
 
 .clock__date-container {
-  margin-top: 6px;
-  font-size: 16px;
+  font-size: 10px;
+  line-height: 1em;
+  letter-spacing: 0.1em;
+  font-style: italic;
   color: rgba(255, 255, 255, 0.8); }
 
 .page-footer {
@@ -1152,3 +1256,77 @@ a {
   @media (max-width: 1023px) {
     .contacts__link svg {
       left: 5px; } }
+
+.image-hover {
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.image-hover__container {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  position: relative; }
+
+.image-hover__img {
+  width: 400px;
+  height: 267px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.image-hover__img--one {
+  z-index: -1;
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+  -webkit-clip-path: polygon(50% 0, 65% 50%, 50% 100%, 0 100%, 0 50%, 0 0);
+          clip-path: polygon(50% 0, 65% 50%, 50% 100%, 0 100%, 0 50%, 0 0); }
+
+.image-hover__img--two {
+  -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 50% 100%, 65% 50%, 50% 0);
+          clip-path: polygon(100% 0, 100% 50%, 100% 100%, 50% 100%, 65% 50%, 50% 0);
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+  margin-left: -1px; }
+
+.image-hover__text {
+  position: absolute;
+  right: 35%;
+  top: 25%;
+  width: 0;
+  height: 150px;
+  background: #ffffff;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 1rem 1.5rem; }
+
+.image-hover__text h4 {
+  margin: 0;
+  padding: 0; }
+
+.image-hover__text p {
+  color: #bfbfbf;
+  margin: 0.5rem 0;
+  line-height: 1.2em; }
+
+.image-hover__container:hover .image-hover__img--one {
+  -webkit-transform: translateX(45%);
+          transform: translateX(45%); }
+
+.image-hover__container:hover .image-hover__img--two {
+  -webkit-transform: translateX(-45%);
+          transform: translateX(-45%); }
+
+.image-hover__container:hover .image-hover__text {
+  width: 280px; }

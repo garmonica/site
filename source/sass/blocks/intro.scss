@@ -1,10 +1,7 @@
 .intro {
-  width: 45%;
   min-width: 320px;
-  margin-right: 40px;
 
   @media (max-width: $tablet-width) {
-    width: auto;
     margin: 0;
     padding: 70px 22px 25px;
     background: $dark-bg url("../img/bg-bike.jpg") no-repeat center / cover;
@@ -20,6 +17,11 @@
   }
 }
 
+.intro__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .intro__logo-link img {
   width: 65px;
   height: auto;
@@ -30,9 +32,9 @@
 }
 
 .intro h2 {
-  margin: 23px 0;
+  margin: 12px 0;
   font-weight: 700;
-  font-size: 46px;
+  font-size: 32px;
   line-height: 1.39em;
   color: $basic-white;
 
@@ -48,12 +50,13 @@
 }
 
 .intro p {
-  margin: 0;
+  margin: 0 auto;
   font-weight: 300;
   font-size: 20px;
   line-height: 1.6em;
   color: $basic-white;
   opacity: 0.8;
+  max-width: 500px;
 
   @media (max-width: $tablet-width) {
     width: 65%;

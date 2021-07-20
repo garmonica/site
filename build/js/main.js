@@ -29,8 +29,8 @@ if (mainNav) {
 
   menuLinks.forEach((link) => {
     link.addEventListener('click', (evt) => {
-      closeMenu();
       evt.preventDefault();
+      closeMenu();
       const id = link.getAttribute('href');
       document.querySelector(id).scrollIntoView({
         behavior: 'smooth',
@@ -134,3 +134,182 @@ window.addEventListener('load', () => {
   updateTime();
   setInterval(updateTime, 1000);
 });
+
+const sendForm = () => {
+  const regForm = document.querySelectorAll('.order__form');
+
+  if (!regForm) {
+    return;
+  }
+
+  regForm.forEach((element) => {
+    element.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      const name = element.querySelector('input[type="text"]').value;
+      const tel = element.querySelector('input[type="tel"]').value;
+
+      const xhr = new XMLHttpRequest();
+      //name и tel - переменные, которые объявляются в php
+      const body = `&name=${name} &tel=${tel}`;
+
+      xhr.open('POST', 'php/sendmail.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.send(body);
+
+      setTimeout(() => {
+        element.reset();
+      }, 100);
+
+    });
+  });
+};
+
+sendForm();
+
+// SLIDER BEGINNING ---------------------------------
+
+const btnPrev = document.querySelector('.slider__prev');
+const btnNext = document.querySelector('.slider__next');
+const circleButtonsBlock = document.querySelector('.slider__circle-buttons');
+
+const images = document.querySelectorAll('.slider__photo');
+
+const pause = document.querySelector('.slider__auto-button--pause');
+const play = document.querySelector('.slider__auto-button--play');
+
+let isPaused = false;
+let currentIndex = 0;
+
+let isStorageSupport = true;
+let storageIsPaused = '';
+let storageCurrentIndex = '';
+
+try {
+  storageIsPaused = localStorage.getItem('paused');
+  storageCurrentIndex = localStorage.getItem('index');
+} catch (err) {
+  isStorageSupport = false;
+}
+
+if (storageIsPaused || storageCurrentIndex) {
+  isPaused = storageIsPaused === 'true';
+  currentIndex = Number(storageCurrentIndex);
+}
+
+const writeInLocalStoragePaused = () => {
+  if (isStorageSupport) {
+    localStorage.setItem('paused', isPaused);
+  }
+};
+
+const writeInLocalStorageIndex = () => {
+  if (isStorageSupport) {
+    localStorage.setItem('index', currentIndex);
+  }
+};
+
+const circleButtons = [];
+for (let i = 1; i <= images.length; i++) {
+  const circleButton = document.createElement('button');
+  circleButtonsBlock.appendChild(circleButton);
+  circleButtons.push(circleButton);
+}
+
+images[currentIndex].classList.add('slider__photo-active');
+circleButtons[currentIndex].classList.add('active');
+
+const onNext = () => {
+  images[currentIndex].classList.remove('slider__photo-active');
+  circleButtons[currentIndex].classList.remove('active');
+  currentIndex++;
+  writeInLocalStorageIndex();
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+    writeInLocalStorageIndex();
+  }
+  images[currentIndex].classList.add('slider__photo-active');
+  circleButtons[currentIndex].classList.add('active');
+
+  startAutoplay();
+};
+
+const onPrev = () => {
+  images[currentIndex].classList.remove('slider__photo-active');
+  circleButtons[currentIndex].classList.remove('active');
+  currentIndex--;
+  writeInLocalStorageIndex();
+  if (currentIndex < 0) {
+    currentIndex = images.length - 1;
+    writeInLocalStorageIndex();
+  }
+  images[currentIndex].classList.add('slider__photo-active');
+  circleButtons[currentIndex].classList.add('active');
+
+  startAutoplay();
+};
+
+btnNext.addEventListener('click', onNext);
+btnPrev.addEventListener('click', onPrev);
+
+circleButtons.forEach((btn, i) => {
+  btn.addEventListener('click', () => {
+    circleButtons[currentIndex].classList.remove('active');
+    images.forEach((img) => img.classList.remove('slider__photo-active'));
+    images[i].classList.add('photo-active');
+    currentIndex = i;
+    writeInLocalStorageIndex();
+    circleButtons[currentIndex].classList.add('active');
+
+    startAutoplay();
+  });
+});
+
+let interval;
+
+const stopAutoplay = () => {
+  if (isPaused === true) {
+    clearInterval(interval);
+    pause.classList.add('slider__auto-button--active');
+    play.classList.remove('slider__auto-button--active');
+  }
+};
+
+const startAutoplay = () => {
+  if (isPaused === false) {
+    clearInterval(interval);
+    interval = setInterval(onNext, 2000);
+    play.classList.add('slider__auto-button--active');
+    pause.classList.remove('slider__auto-button--active');
+  }
+};
+
+stopAutoplay();
+startAutoplay();
+
+pause.addEventListener('click', () => {
+  isPaused = true;
+  writeInLocalStoragePaused();
+  stopAutoplay();
+});
+
+play.addEventListener('click', () => {
+  isPaused = false;
+  writeInLocalStoragePaused();
+  startAutoplay();
+});
+
+window.addEventListener('keydown', (evt) => {
+  if (evt.key === 'ArrowRight' || evt.key === 'Enter') {
+    onNext();
+    startAutoplay();
+  }
+});
+
+window.addEventListener('keydown', (evt) => {
+  if (evt.key === 'ArrowLeft' || evt.key === 'Backspace') {
+    onPrev();
+    startAutoplay();
+  }
+});
+
+// SLIDER ENDING --------------------------------------------------
