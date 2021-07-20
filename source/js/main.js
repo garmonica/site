@@ -255,7 +255,7 @@ circleButtons.forEach((btn, i) => {
   btn.addEventListener('click', () => {
     circleButtons[currentIndex].classList.remove('active');
     images.forEach((img) => img.classList.remove('slider__photo-active'));
-    images[i].classList.add('photo-active');
+    images[i].classList.add('slider__photo-active');
     currentIndex = i;
     writeInLocalStorageIndex();
     circleButtons[currentIndex].classList.add('active');
